@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penny Rounding — Clover App</title>
+<style>
+  :root {
+    --teal: #00897B;
+    --teal-dark: #00695C;
+    --teal-light: #E0F2F1;
+    --text: #1a2e2c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: #fff;
+  }
+  header.hero {
+    background: linear-gradient(160deg, var(--teal), var(--teal-dark));
+    color: #fff;
+    padding: 64px 24px 80px;
+    text-align: center;
+  }
+  .hero img.icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.15);
+    padding: 10px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    margin: 0 0 12px;
+    font-weight: 800;
+  }
+  .hero p.tagline {
+    font-size: 1.25rem;
+    margin: 0 auto;
+    max-width: 560px;
+    opacity: 0.95;
+  }
+  .badge {
+    display: inline-block;
+    margin-top: 24px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+  }
+  main {
+    max-width: 880px;
+    margin: -40px auto 0;
+    padding: 0 24px 80px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    padding: 40px;
+    margin-bottom: 32px;
+  }
+  .card h2 {
+    color: var(--teal-dark);
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+  }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 12px 0 12px 48px;
+    border-bottom: 1px solid #eef3f2;
+    font-size: 1.05rem;
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background: var(--teal-light);
+    color: var(--teal-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .feature {
+    padding: 20px;
+    background: var(--teal-light);
+    border-radius: 12px;
+  }
+  .feature h3 {
+    margin: 0 0 8px;
+    color: var(--teal-dark);
+    font-size: 1.05rem;
+  }
+  .feature p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .pricing {
+    text-align: center;
+    padding: 32px;
+    background: var(--teal-dark);
+    color: #fff;
+    border-radius: 16px;
+  }
+  .pricing .price {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin: 8px 0;
+  }
+  .pricing .price span {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+  footer {
+    text-align: center;
+    padding: 32px 24px 60px;
+    color: #5b6e6a;
+    font-size: 0.9rem;
+  }
+  footer a {
+    color: var(--teal-dark);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  footer a:hover { text-decoration: underline; }
+  .footer-links {
+    margin-top: 8px;
+  }
+  .footer-links a {
+    margin: 0 10px;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="icon" src="icon.png" alt="Penny Rounding icon">
+  <h1>Penny Rounding</h1>
+  <p class="tagline">Automatically rounds cash totals to the nearest $0.05 — no more pennies, no more exact change hassle.</p>
+  <span class="badge">Available on the Clover App Market</span>
+</header>
+
+<main>
+
+  <div class="card">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li>Tap the floating "Round for Cash" button while in Clover Register</li>
+      <li>Review the original total, adjustment, and rounded total</li>
+      <li>Tap Apply — the order is updated instantly</li>
+      <li>Collect cash at the rounded amount using the standard Cash tender</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Features</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Smart rounding</h3>
+        <p>Rounds up or down to the nearest $0.05 (max ±$0.02 adjustment) so cash drawers stay simple.</p>
+      </div>
+      <div class="feature">
+        <h3>Flexible direction</h3>
+        <p>Choose Auto, Always Up, or Always Down rounding to match your store's policy.</p>
+      </div>
+      <div class="feature">
+        <h3>Customizable label</h3>
+        <p>The adjustment line shown on the order can be relabeled to fit your receipt style.</p>
+      </div>
+      <div class="feature">
+        <h3>Works everywhere</h3>
+        <p>Runs as a floating button over all apps on supported Clover devices — no workflow changes needed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card pricing">
+    <div>Simple subscription pricing</div>
+    <div class="price">$4.99<span>/month</span></div>
+    <div>Available in the United States and Canada</div>
+  </div>
+
+</main>
+
+<footer>
+  <div>&copy; 2026 Penny Rounding. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:customerrelations@crusaderpayments.com">Contact Support</a>
+  </div>
+</footer>
+
+</body>
+</html>
